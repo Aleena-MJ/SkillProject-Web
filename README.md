@@ -280,7 +280,7 @@ Set strong production values in `.env`:
 ```ini
 PORT=3000
 NODE_ENV=production
-JWT_SECRET=your_super_strong_random_secret_string_here_998877
+JWT_SECRET=your_secure_random_secret_here
 DB_PATH=./data/skills.db
 ```
 *(Save and exit nano: `Ctrl + O`, `Enter`, then `Ctrl + X`).*
