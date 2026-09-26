@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | SkillProject-Web</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main-nav"></div>
+
+  <main class="main-content">
+    <!-- Welcome Header -->
+    <div class="page-header" style="background: white; padding: 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--border); margin-bottom: 2rem;">
+      <div style="display: flex; align-items: center; gap: 1.25rem;">
+        <div class="avatar" id="dash-avatar" style="width: 54px; height: 54px; font-size: 1.3rem;">--</div>
+        <div>
+          <h1 class="page-title" id="dash-greeting">Welcome back!</h1>
+          <p class="page-subtitle" id="dash-student-info">Loading your student profile...</p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="add-skill.html" class="btn btn-primary">➕ Offer a New Skill</a>
+        <a href="skills.html" class="btn btn-secondary">🔍 Browse Skills</a>
+      </div>
+    </div>
+
+    <!-- Quick Stats Grid -->
+    <div class="grid-4" style="margin-bottom: 2.5rem;">
+      <div class="card" style="text-align: center; border-left: 4px solid var(--primary);">
+        <div class="stat-number" id="stat-my-skills">0</div>
+        <div class="stat-label">Skills I'm Teaching</div>
+      </div>
+      <div class="card" style="text-align: center; border-left: 4px solid var(--secondary);">
+        <div class="stat-number" id="stat-received-requests">0</div>
+        <div class="stat-label">Requests Received</div>
+      </div>
+      <div class="card" style="text-align: center; border-left: 4px solid var(--accent);">
+        <div class="stat-number" id="stat-sent-requests">0</div>
+        <div class="stat-label">Requests Sent</div>
+      </div>
+      <div class="card" style="text-align: center; border-left: 4px solid var(--success);">
+        <div class="stat-number" id="stat-accepted">0</div>
+        <div class="stat-label">Accepted Collaborations</div>
+      </div>
+    </div>
+
+    <!-- Dashboard Content Columns -->
+    <div class="grid-2">
+      <!-- Incoming Requests Section -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h2 style="font-size: 1.25rem; font-weight: 700;">Incoming Requests (To You)</h2>
+          <a href="requests.html" style="font-size: 0.88rem; font-weight: 600;">View All &rarr;</a>
+        </div>
+        <div class="card" id="dash-incoming-container">
+          <p style="color: var(--text-muted); text-align: center; padding: 1.5rem;">Loading incoming requests...</p>
+        </div>
+      </div>
+
+      <!-- My Teaching Skills Section -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <h2 style="font-size: 1.25rem; font-weight: 700;">My Teaching Skills</h2>
+          <a href="add-skill.html" style="font-size: 0.88rem; font-weight: 600;">+ Add New</a>
+        </div>
+        <div class="card" id="dash-myskills-container">
+          <p style="color: var(--text-muted); text-align: center; padding: 1.5rem;">Loading your skills...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SkillProject-Web. College Skill Exchange Platform.</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Student Account | SkillProject-Web</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main-nav"></div>
+
+  <main class="main-content">
+    <div class="container-narrow">
+      <div class="card" style="margin-top: 1rem; padding: 2.25rem;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <div class="brand-icon" style="margin: 0 auto 1rem; width: 48px; height: 48px; font-size: 1.5rem;">🎓</div>
+          <h1 style="font-size: 1.75rem; font-weight: 700;">Join SkillProject-Web</h1>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.35rem;">
+            Create your profile to start teaching and requesting skills
+          </p>
+        </div>
+
+        <form id="register-form">
+          <div class="form-group">
+            <label class="form-label" for="reg-name">Full Name *</label>
+            <input 
+              type="text" 
+              id="reg-name" 
+              class="form-control" 
+              placeholder="e.g. Jordan Lee" 
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="reg-email">College / University Email *</label>
+            <input 
+              type="email" 
+              id="reg-email" 
+              class="form-control" 
+              placeholder="e.g. jordan.lee@college.edu" 
+              required
+            >
+            <div class="form-hint">Used for login and student account verification.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="reg-password">Password *</label>
+            <input 
+              type="password" 
+              id="reg-password" 
+              class="form-control" 
+              placeholder="Minimum 6 characters" 
+              minlength="6" 
+              required
+            >
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="reg-college">College / University</label>
+              <input 
+                type="text" 
+                id="reg-college" 
+                class="form-control" 
+                placeholder="e.g. State University"
+              >
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-major">Major & Year</label>
+              <input 
+                type="text" 
+                id="reg-major" 
+                class="form-control" 
+                placeholder="e.g. Physics (Sophomore)"
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="reg-contact">Preferred Contact Method</label>
+            <input 
+              type="text" 
+              id="reg-contact" 
+              class="form-control" 
+              placeholder="e.g. Discord handle, Telegram, phone number, or campus email"
+            >
+            <div class="form-hint">Shared with accepted study partners so you can connect.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="reg-bio">Short Bio / Interests</label>
+            <textarea 
+              id="reg-bio" 
+              class="form-control" 
+              rows="3" 
+              placeholder="What are your academic interests, hobbies, or what are you eager to learn?"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;" id="reg-submit-btn">
+            Create Account & Get Started
+          </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 1.5rem; font-size: 0.92rem; color: var(--text-muted);">
+          Already have an account? 
+          <a href="login.html" style="font-weight: 600;">Sign in here</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SkillProject-Web. College Skill Exchange Platform.</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

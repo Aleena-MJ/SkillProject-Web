@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile | SkillProject-Web</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main-nav"></div>
+
+  <main class="main-content">
+    <div class="page-header" style="max-width: 800px; margin: 0 auto 2rem;">
+      <div>
+        <h1 class="page-title">My Profile</h1>
+        <p class="page-subtitle">Manage your student details and contact information</p>
+      </div>
+      <button onclick="logout()" class="btn btn-secondary" style="color: var(--danger); border-color: var(--border);">
+        Log Out
+      </button>
+    </div>
+
+    <div style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 2rem;">
+      <!-- Profile Summary Card -->
+      <div>
+        <div class="card" style="text-align: center;">
+          <div class="avatar" id="profile-avatar" style="width: 72px; height: 72px; font-size: 1.75rem; margin: 0 auto 1rem;">
+            --
+          </div>
+          <h2 style="font-size: 1.25rem; font-weight: 700;" id="profile-display-name">--</h2>
+          <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 0.25rem;" id="profile-display-email">--</p>
+          
+          <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); text-align: left; font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.6rem;">
+            <div>
+              <strong>College:</strong>
+              <div id="profile-display-college" style="color: var(--text-main);">--</div>
+            </div>
+            <div>
+              <strong>Major:</strong>
+              <div id="profile-display-major" style="color: var(--text-main);">--</div>
+            </div>
+            <div>
+              <strong>Member Since:</strong>
+              <div id="profile-display-joined" style="color: var(--text-main);">--</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit Profile Form -->
+      <div class="card">
+        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);">
+          Edit Profile Information
+        </h3>
+
+        <form id="profile-form">
+          <div class="form-group">
+            <label class="form-label" for="profile-name">Full Name *</label>
+            <input type="text" id="profile-name" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="profile-email">Email Address</label>
+            <input type="email" id="profile-email" class="form-control" disabled style="background-color: var(--bg-alt); cursor: not-allowed;">
+            <div class="form-hint">Email is linked to your login and cannot be altered.</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="profile-college">College / University</label>
+              <input type="text" id="profile-college" class="form-control" placeholder="e.g. School of Engineering">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="profile-major">Major & Year</label>
+              <input type="text" id="profile-major" class="form-control" placeholder="e.g. Computer Science (Junior)">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="profile-contact">Preferred Contact Information</label>
+            <input type="text" id="profile-contact" class="form-control" placeholder="e.g. Discord: alex#1234, or Telegram">
+            <div class="form-hint">This will be shared with fellow students once a learning request is accepted.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="profile-bio">About You / Learning Goals</label>
+            <textarea id="profile-bio" class="form-control" rows="4" placeholder="Briefly describe what you study, your academic interests, or skills you want to learn."></textarea>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-primary" id="profile-save-btn">
+              Save Changes
+            </button>
+            <a href="dashboard.html" class="btn btn-secondary">Back to Dashboard</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SkillProject-Web. College Skill Exchange Platform.</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

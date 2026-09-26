@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Peer Skills | SkillProject-Web</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main-nav"></div>
+
+  <main class="main-content">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Browse Campus Skills</h1>
+        <p class="page-subtitle">Find fellow students willing to share their skills, or request peer tutoring</p>
+      </div>
+      <a href="add-skill.html" class="btn btn-primary">➕ Teach a Skill</a>
+    </div>
+
+    <!-- Filter & Search Section -->
+    <div class="filter-bar">
+      <div class="search-row">
+        <div class="search-input-wrap">
+          <input 
+            type="text" 
+            id="search-input" 
+            class="form-control" 
+            placeholder="Search by skill name, topic, or teacher..."
+          >
+        </div>
+
+        <div style="min-width: 170px;">
+          <select id="filter-proficiency" class="form-control">
+            <option value="All">All Proficiency Levels</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+            <option value="Expert">Expert</option>
+          </select>
+        </div>
+
+        <button id="search-btn" class="btn btn-secondary">Search</button>
+        <button id="reset-btn" class="btn btn-outline" style="border-color: var(--border); color: var(--text-muted);">Reset</button>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="category-pills" id="category-pills-container">
+        <button class="pill-btn active" data-category="All">All Categories</button>
+        <button class="pill-btn" data-category="Programming">💻 Programming</button>
+        <button class="pill-btn" data-category="Design">🎨 Design</button>
+        <button class="pill-btn" data-category="Mathematics">📐 Mathematics</button>
+        <button class="pill-btn" data-category="Languages">🗣️ Languages</button>
+        <button class="pill-btn" data-category="Music">🎵 Music</button>
+        <button class="pill-btn" data-category="Science">🔬 Science</button>
+        <button class="pill-btn" data-category="Business">📊 Business</button>
+        <button class="pill-btn" data-category="Writing">✍️ Writing</button>
+        <button class="pill-btn" data-category="Other">💡 Other</button>
+      </div>
+    </div>
+
+    <!-- Result summary counter -->
+    <div style="margin-bottom: 1.25rem; font-size: 0.92rem; color: var(--text-muted);" id="results-count">
+      Showing all available skills...
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="grid-3" id="skills-grid">
+      <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-muted);">
+        Loading skills...
+      </div>
+    </div>
+  </main>
+
+  <!-- Learning Request Modal -->
+  <div class="modal-overlay" id="request-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Request to Learn</h3>
+        <button class="modal-close" onclick="closeRequestModal()">&times;</button>
+      </div>
+
+      <form id="send-request-form">
+        <div class="modal-body">
+          <input type="hidden" id="modal-skill-id">
+          
+          <div style="margin-bottom: 1.25rem; padding: 1rem; background-color: var(--primary-light); border-radius: var(--radius-md);">
+            <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--primary);">Skill Selected</div>
+            <div id="modal-skill-title" style="font-weight: 700; font-size: 1.1rem; color: var(--text-main); margin-top: 0.2rem;">--</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">
+              Teacher: <strong id="modal-teacher-name">--</strong>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="request-message">What do you want to learn? *</label>
+            <textarea 
+              id="request-message" 
+              class="form-control" 
+              rows="4" 
+              placeholder="Introduce yourself, describe what specific topics you need help with or why you want to learn this skill."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="request-time">Your Preferred Schedule / Availability</label>
+            <input 
+              type="text" 
+              id="request-time" 
+              class="form-control" 
+              placeholder="e.g. Tuesday or Thursday afternoons, Weekends, Zoom or Library"
+            >
+            <div class="form-hint">Helps the teacher see if your schedules align.</div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeRequestModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="modal-submit-btn">Send Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 SkillProject-Web. College Skill Exchange Platform.</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/skills.js"></script>
+</body>
+</html>

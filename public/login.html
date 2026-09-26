@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In | SkillProject-Web</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main-nav"></div>
+
+  <main class="main-content">
+    <div class="container-narrow">
+      <div class="card" style="margin-top: 1.5rem; padding: 2.25rem;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <div class="brand-icon" style="margin: 0 auto 1rem; width: 48px; height: 48px; font-size: 1.5rem;">🎓</div>
+          <h1 style="font-size: 1.75rem; font-weight: 700;">Welcome Back</h1>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.35rem;">
+            Sign in to manage your skills and learning requests
+          </p>
+        </div>
+
+        <form id="login-form">
+          <div class="form-group">
+            <label class="form-label" for="email">Student Email Address</label>
+            <input 
+              type="email" 
+              id="email" 
+              class="form-control" 
+              placeholder="e.g. alex@college.edu" 
+              required
+              autocomplete="email"
+            >
+          </div>
+
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <label class="form-label" for="password" style="margin-bottom: 0;">Password</label>
+            </div>
+            <input 
+              type="password" 
+              id="password" 
+              class="form-control" 
+              placeholder="Enter your password" 
+              required
+              autocomplete="current-password"
+            >
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;" id="login-submit-btn">
+            Sign In to SkillProject
+          </button>
+        </form>
+
+        <!-- Quick 1-click Demo Fillers for Professors/Testers -->
+        <div style="margin-top: 1.75rem; padding: 1rem; background-color: var(--bg-alt); border-radius: var(--radius-md); border: 1px dashed var(--border);">
+          <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem;">
+            ⚡ Quick Demo Accounts (1-Click Fill)
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="fillDemo('alex@college.edu', 'student123')">
+              Demo: Alex (Computer Science)
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="fillDemo('priya@college.edu', 'student123')">
+              Demo: Priya (UX Design)
+            </button>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 1.5rem; font-size: 0.92rem; color: var(--text-muted);">
+          Don't have an account yet? 
+          <a href="register.html" style="font-weight: 600;">Create a student account</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SkillProject-Web. College Skill Exchange Platform.</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

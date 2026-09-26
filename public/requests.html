@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Requests & Teaching Skills | SkillProject-Web</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main-nav"></div>
+
+  <main class="main-content">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Activity & Learning Requests</h1>
+        <p class="page-subtitle">Manage learning inquiries, track your tutoring requests, and maintain your skills</p>
+      </div>
+      <a href="add-skill.html" class="btn btn-primary">➕ Offer Another Skill</a>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs-nav" id="requests-tabs">
+      <button class="tab-btn active" data-tab="tab-received">
+        📬 Received Requests <span class="badge badge-primary" id="badge-received-count">0</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-sent">
+        🚀 Sent Requests <span class="badge badge-secondary" id="badge-sent-count">0</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-skills">
+        🎓 My Teaching Skills <span class="badge badge-accent" id="badge-skills-count">0</span>
+      </button>
+    </div>
+
+    <!-- TAB 1: Received Requests (Teaching) -->
+    <div class="tab-pane active" id="tab-received">
+      <div id="received-list" class="grid-2">
+        <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-muted);">
+          Loading received requests...
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: Sent Requests (Learning) -->
+    <div class="tab-pane" id="tab-sent">
+      <div id="sent-list" class="grid-2">
+        <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-muted);">
+          Loading sent requests...
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: My Teaching Skills -->
+    <div class="tab-pane" id="tab-skills">
+      <div id="my-skills-list" class="grid-3">
+        <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-muted);">
+          Loading your teaching skills...
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SkillProject-Web. College Skill Exchange Platform.</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/requests.js"></script>
+</body>
+</html>

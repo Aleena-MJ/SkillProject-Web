@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teach a Skill | SkillProject-Web</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="main-nav"></div>
+
+  <main class="main-content">
+    <div class="page-header" style="max-width: 800px; margin: 0 auto 2rem;">
+      <div>
+        <h1 class="page-title">Offer a Skill to Teach</h1>
+        <p class="page-subtitle">Share your knowledge with fellow students and become a peer mentor</p>
+      </div>
+    </div>
+
+    <div style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+      <!-- Form Column -->
+      <div class="card">
+        <form id="add-skill-form">
+          <div class="form-group">
+            <label class="form-label" for="skill-title">Skill Title *</label>
+            <input 
+              type="text" 
+              id="skill-title" 
+              class="form-control" 
+              placeholder="e.g. React & Web Development Basics, Or Organic Chemistry" 
+              required
+            >
+            <div class="form-hint">Make it descriptive so students quickly understand what you teach.</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="skill-category">Subject Category *</label>
+              <select id="skill-category" class="form-control" required>
+                <option value="">Select a category</option>
+                <option value="Programming">💻 Programming</option>
+                <option value="Design">🎨 Design / UX</option>
+                <option value="Mathematics">📐 Mathematics</option>
+                <option value="Languages">🗣️ Languages</option>
+                <option value="Music">🎵 Music & Audio</option>
+                <option value="Science">🔬 Science & Lab</option>
+                <option value="Business">📊 Business & Finance</option>
+                <option value="Writing">✍️ Writing & Literature</option>
+                <option value="Other">💡 Other / Miscellaneous</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="skill-proficiency">Your Proficiency Level</label>
+              <select id="skill-proficiency" class="form-control">
+                <option value="Beginner">Beginner (Can help with basics)</option>
+                <option value="Intermediate" selected>Intermediate (Coursework done)</option>
+                <option value="Advanced">Advanced (Extensive project/TA exp)</option>
+                <option value="Expert">Expert (Near professional / native)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="skill-availability">Availability & Preferred Format</label>
+            <input 
+              type="text" 
+              id="skill-availability" 
+              class="form-control" 
+              placeholder="e.g. Evenings, Weekends on Discord/Zoom, or Campus Student Center"
+            >
+            <div class="form-hint">Let learners know when and where you are free to meet.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="skill-description">Detailed Description *</label>
+            <textarea 
+              id="skill-description" 
+              class="form-control" 
+              rows="5" 
+              placeholder="Explain what topics you can cover, what background learners need, your approach to tutoring, or relevant courses you've aced."
+              required
+            ></textarea>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: center; margin-top: 1.5rem;">
+            <button type="submit" class="btn btn-primary" id="skill-submit-btn">
+              Publish Skill Listing
+            </button>
+            <a href="dashboard.html" class="btn btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Tips Sidebar -->
+      <div>
+        <div class="card" style="background-color: var(--primary-light); border-color: rgba(79, 70, 229, 0.2);">
+          <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;">
+            💡 Tips for Peer Mentors
+          </h3>
+          <ul style="padding-left: 1.25rem; font-size: 0.88rem; color: var(--text-main); line-height: 1.6; display: flex; flex-direction: column; gap: 0.6rem;">
+            <li><strong>Be specific:</strong> Instead of just "Math", mention "Calculus I & Exam Prep".</li>
+            <li><strong>Mention your background:</strong> E.g., "Got an A in CS201 last semester".</li>
+            <li><strong>Outline expectations:</strong> How many hours a week you can commit.</li>
+            <li><strong>Skill barter:</strong> Mention if you'd love to learn another skill in exchange!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SkillProject-Web. College Skill Exchange Platform.</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/add-skill.js"></script>
+</body>
+</html>

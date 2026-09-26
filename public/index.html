@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillProject-Web | College Peer-to-Peer Skill Sharing</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Header -->
+  <div id="main-nav"></div>
+
+  <!-- Hero Section -->
+  <main class="main-content">
+    <section class="hero">
+      <div class="hero-pill">
+        🎓 Student-to-Student Learning Community
+      </div>
+      <h1 class="hero-title">
+        Share what you know.<br><span>Learn what you need.</span>
+      </h1>
+      <p class="hero-desc">
+        SkillProject-Web connects college students to exchange knowledge. Teach programming, design, calculus, or foreign languages, and find peer tutors right on campus.
+      </p>
+      <div class="hero-actions" id="hero-cta-group">
+        <a href="skills.html" class="btn btn-primary btn-lg">Explore Available Skills</a>
+        <a href="register.html" class="btn btn-secondary btn-lg" id="join-btn">Join Skill Exchange</a>
+      </div>
+    </section>
+
+    <!-- Platform Stats -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="stat-skills">--</div>
+        <div class="stat-label">Available Skills to Learn</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-categories">8+</div>
+        <div class="stat-label">Academic & Creative Subjects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Free Student Peer Tutoring</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">⚡ Fast</div>
+        <div class="stat-label">Direct Peer Requests</div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section style="margin-bottom: 4rem;">
+      <div class="section-title-wrap">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Collaborative learning made simple in three simple steps</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem;">Post Your Skill</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Add a skill you can teach—whether it's Python, Figma, conversational Spanish, or Differential Equations.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem;">Browse & Request</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Search for what you want to learn, read teacher reviews and proficiencies, and send a direct learning request.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3 style="margin-bottom: 0.5rem; font-size: 1.15rem;">Connect & Grow</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Once accepted, coordinate schedules online or in campus study halls to master new skills together.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Skills Section -->
+    <section style="margin-bottom: 3rem;">
+      <div class="page-header">
+        <div>
+          <h2 class="section-title" style="font-size: 1.6rem;">Featured Peer Skills</h2>
+          <p class="page-subtitle">Recent skills shared by fellow students ready to tutor</p>
+        </div>
+        <a href="skills.html" class="btn btn-outline">View All Skills &rarr;</a>
+      </div>
+
+      <div class="grid-3" id="featured-skills-grid">
+        <!-- Rendered dynamically via home.js -->
+        <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--text-muted);">
+          Loading skills from campus community...
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="skills.html">Browse Skills</a>
+      <a href="login.html">Sign In</a>
+      <a href="register.html">Sign Up</a>
+    </div>
+    <p>&copy; 2026 SkillProject-Web. Built for college student collaborative learning.</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
